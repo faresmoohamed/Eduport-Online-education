@@ -19192,7 +19192,7 @@ textarea.form-control-lg {
   }
   .navbar-expand-xl .navbar-collapse .navbar-nav .dropdown-toggle::after {
     position: absolute;
-    left: 25px;
+    left: 9px;
   }
   .navbar-expand-xl .navbar-toggler {
     border-color: transparent !important;
