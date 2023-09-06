@@ -1,0 +1,2317 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+	<title>Eduport - LMS, Education and Course Theme</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
+	<link rel="canonical" href="https://eduport.webestica.com/course-detail.html" />
+
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+ 
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+		    var el = document.querySelector('.theme-icon-active');
+			if(el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+				const activeThemeIcon = document.querySelector('.theme-icon-active use')
+				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+					element.classList.remove('active')
+				})
+
+				btnToActive.classList.add('active')
+				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+			}
+
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+				if (storedTheme !== 'light' || storedTheme !== 'dark') {
+					setTheme(getPreferredTheme())
+				}
+			})
+
+			showActiveTheme(getPreferredTheme())
+
+			document.querySelectorAll('[data-bs-theme-value]')
+				.forEach(toggle => {
+					toggle.addEventListener('click', () => {
+						const theme = toggle.getAttribute('data-bs-theme-value')
+						localStorage.setItem('theme', theme)
+						setTheme(theme)
+						showActiveTheme(theme)
+					})
+				})
+
+			}
+		})
+		
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/tiny-slider.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/choices/css/choices.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style-rtl.css">
+
+</head>
+
+<body>
+
+<!-- Header START -->
+<header class="navbar-light navbar-sticky header-static">
+	<!-- Nav START -->
+	<nav class="navbar navbar-expand-xl">
+		<div class="container-fluid px-3 px-xl-5">
+			<!-- Logo START -->
+			<a class="navbar-brand" href="index.html">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-animation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+
+			<!-- Main navbar START -->
+			<div class="navbar-collapse w-100 collapse" id="navbarCollapse">
+
+
+				<!-- Nav category menu start -->
+				<ul class="navbar-nav navbar-nav-scroll me-3"></ul>
+				<!-- Nav category menu END -->
+
+				<!-- Nav Main menu START -->
+				<ul class="navbar-nav navbar-nav-scroll me-auto align-items-center">
+					<!-- Nav category menu START -->
+					<!-- Nav item 1 courses -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">الدورات التدريبية</a>
+						<ul class="dropdown-menu" aria-labelledby="categoryMenu">
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">تطوير</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<!-- dropdown submenu open right -->
+									<li class="dropdown-submenu dropend">
+										<a class="dropdown-item dropdown-toggle" href="#">تطوير الويب</a>
+										<ul class="dropdown-menu" data-bs-popper="none">
+											<li> <a class="dropdown-item" href="#">دورة شاملة في CSS</a> </li>
+											<li> <a class="dropdown-item" href="#">دورة شاملة في JavaScript </a> </li>
+											<li> <a class="dropdown-item" href="#">دورة شاملة في Angular </a> </li>
+											<li> <a class="dropdown-item" href="#">دورة شاملة في PHP </a> </li>
+											<li> <a class="dropdown-item" href="#">دورة شاملة في HTML </a> </li>
+											<li> <a class="dropdown-item" href="#">دورة شاملة في React </a> </li>
+										</ul>
+									</li>
+									<li> <a class="dropdown-item" href="#">علم البيانات</a> </li>
+									<li> <a class="dropdown-item" href="#">تطوير تطبيقات الهاتف المحمول</a> </li>
+									<li> <a class="dropdown-item" href="#">لغات البرمجة</a> </li>
+									<li> <a class="dropdown-item" href="#">اختبار البرمجيات</a> </li>
+									<li> <a class="dropdown-item" href="#">هندسة البرمجيات</a> </li>
+									<li> <a class="dropdown-item" href="#">أدوات تطوير البرمجيات</a> </li>
+								</ul>
+							</li>
+							<li> <a class="dropdown-item" href="#">تصميم</a></li>
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">تسويق</a>
+								<div class="dropdown-menu dropdown-menu-start dropdown-width-lg" data-bs-popper="none">
+									<div class="row p-4">
+										<!-- Dropdown column item -->
+										<div class="col-xl-6 col-xxl-4 mb-4 mb-xl-0">
+											<h6 class="mb-0">ابدء الأن</h6>
+											<hr> <!-- Divider -->
+											<ul class="list-unstyled">
+												<li> <a class="dropdown-item" href="#">البحث عن المتجر</a> </li>
+												<li> <a class="dropdown-item" href="#">دعاية واعلان</a> </li>
+												<li> <a class="dropdown-item" href="#">سلوك المستهلك</a> </li>
+												<li> <a class="dropdown-item" href="#">التسويق الرقمي</a> </li>
+												<li> <a class="dropdown-item" href="#">أخلاقيات التسويق</a> </li>
+												<li> <a class="dropdown-item" href="#">تسويق وسائل الاعلام الاجتماعية</a> </li>
+												<li> <a class="dropdown-item" href="#">العلاقات العامة</a> </li>
+												<li> <a class="dropdown-item" href="#">علم القرار</a> </li>
+												<li> <a class="dropdown-item" href="#">تحسين محركات البحث</a> </li>
+												<li> <a class="dropdown-item" href="#">تسويق الاعمال</a> </li>
+											</ul>
+										</div>
+
+										<!-- Dropdown column item -->
+										<div class="col-xl-6 col-xxl-4 mb-4 mb-xl-0">
+											<h6 class="mb-0">درجة</h6>
+											<hr> <!-- Divider -->
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<img src="assets/images/client/uni-logo-01.svg" class="icon-md" alt="">
+												<div class="ms-3">
+													<a class="stretched-link h6 mb-0" href="#">جامعة القرن الأمريكية، نيو مكسيكو</a>
+													<p class="mb-0 small">بكالوريوس في علوم الحاسوب</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<img src="assets/images/client/uni-logo-02.svg" class="icon-md" alt="">
+												<div class="ms-3">
+													<a class="stretched-link h6 mb-0" href="#">كلية إنديانا - بلومنجتون</a>
+													<p class="mb-0 small">الماجستير في علوم الكمبيوتر</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<img src="assets/images/client/uni-logo-03.svg" class="icon-md" alt="">
+												<div class="ms-3">
+													<a class="stretched-link h6 mb-0" href="#">كلية جنوب فلوريدا</a>
+													<p class="mb-0 small">كلية العلوم الطبية</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<img src="assets/images/client/uni-logo-01.svg" class="icon-md" alt="">
+												<div class="ms-3">
+													<a class="stretched-link h6 mb-0" href="#">حرم أندرسون</a>
+													<p class="mb-0 small">بكالوريوس في علوم الحاسوب</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex position-relative">
+												<img src="assets/images/client/uni-logo-04.svg" class="icon-md" alt="">
+												<div class="ms-3">
+													<a class="stretched-link h6 mb-0" href="#">جامعة جنوب كاليفورنيا</a>
+													<p class="mb-0 small">الماجستير في تطوير الأعمال</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- Dropdown column item -->
+										<div class="col-xl-6 col-xxl-4">
+											<h6 class="mb-0">شهادة</h6>
+											<hr> <!-- Divider -->
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<h2 class="mb-0"><i class="fab fa-fw fa-google text-google-icon"></i></h2>
+												<div class="ms-2">
+													<a class="stretched-link h6 mb-0" href="#">شهادة جوجل سيو</a>
+													<p class="mb-0 small">لا توجد شروط مسبقة</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<h2 class="mb-0"><i class="fab fa-fw fa-linkedin-in text-linkedin"></i></h2>
+												<div class="ms-2">
+													<a class="stretched-link h6 mb-0" href="#">تنفيذي تطوير الأعمال (BDE)</a>
+													<p class="mb-0 small">لا توجد شروط مسبقة</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<h2 class="mb-0"><i class="fab fa-fw fa-facebook text-facebook"></i></h2>
+												<div class="ms-2">
+													<a class="stretched-link h6 mb-0" href="#">الفيسبوك التسويق عبر وسائل التواصل الاجتماعي</a>
+													<p class="mb-0 small">Expert advice</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<h2 class="mb-0"><i class="fas fa-fw fa-basketball-ball text-dribbble"></i></h2>
+												<div class="ms-2">
+													<a class="stretched-link h6 mb-0" href="#">التصميم الجرافيكي الإبداعي</a>
+													<p class="mb-0 small">لا توجد شروط مسبقة</p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Advertisement -->
+									<div class="row">
+										<div class="col-12">
+											<div class="card bg-blue rounded-0 rounded-bottom p-3 position-relative overflow-hidden" style="background:url(assets/images/pattern/05.png) no-repeat center center; background-size:cover;">
+												<!-- SVG decoration -->
+												<figure class="position-absolute bottom-0 end-0 mb-n4 d-none d-md-block">
+													<svg width="92.6px" height="135.2px">	
+														<path class="fill-white" d="M71.5,131.4c0.2,0.1,0.4,0.1,0.6-0.1c0,0,0.6-0.7,1.6-1.9c0.2-0.2,0.1-0.5-0.1-0.7c-0.2-0.2-0.5-0.1-0.7,0.1 c-1,1.2-1.6,1.8-1.6,1.8c-0.2,0.2-0.2,0.5,0,0.7C71.4,131.3,71.4,131.4,71.5,131.4z"></path>
+														<path class="fill-white" d="M76,125.5c-0.2-0.2-0.3-0.5-0.1-0.7c1-1.4,1.9-2.8,2.8-4.2c0.1-0.2,0.4-0.3,0.7-0.2c0.2,0.1,0.3,0.4,0.2,0.7 c-0.9,1.4-1.8,2.9-2.8,4.2C76.6,125.6,76.3,125.6,76,125.5C76.1,125.5,76.1,125.5,76,125.5z M81.4,116.9 c-0.2-0.1-0.3-0.4-0.2-0.7c0.2-0.5,0.5-0.9,0.7-1.4c0.5-1.1,1-2.1,1.5-3.2c0.1-0.3,0.4-0.4,0.6-0.3c0.3,0.1,0.4,0.4,0.3,0.6 c-0.5,1.1-1,2.1-1.5,3.2c-0.2,0.5-0.5,0.9-0.7,1.4C81.9,117,81.6,117,81.4,116.9C81.4,116.9,81.4,116.9,81.4,116.9z M85.1,107.1 c0.5-1.6,1-3.2,1.3-4.8c0.1-0.3,0.3-0.4,0.6-0.4c0.3,0.1,0.4,0.3,0.4,0.6c-0.4,1.6-0.8,3.3-1.3,4.9c-0.1,0.3-0.4,0.4-0.6,0.3 c0,0,0,0-0.1,0C85.1,107.6,85,107.3,85.1,107.1z M47.3,83c-1.5-1.1-2.5-2.5-3.1-4.2c-0.1-0.3,0-0.5,0.3-0.6 c0.3-0.1,0.5,0,0.6,0.3c0.5,1.5,1.5,2.7,2.8,3.7c0.2,0.2,0.3,0.5,0.1,0.7C47.9,83.1,47.6,83.1,47.3,83C47.4,83,47.4,83,47.3,83z  M51.7,84.6c0-0.3,0.3-0.5,0.5-0.4c1.4,0.2,2.9-0.3,4.3-1.4c0.2-0.2,0.5-0.1,0.7,0.1c0.2,0.2,0.1,0.5-0.1,0.7 c-1.6,1.2-3.4,1.8-5,1.6c-0.1,0-0.1,0-0.2,0C51.8,85,51.7,84.8,51.7,84.6z M87.2,97.4c0.2-1.7,0.2-3.3,0.2-5 c0-0.3,0.2-0.5,0.5-0.5c0.3,0,0.5,0.2,0.5,0.5c0.1,1.7,0,3.4-0.2,5.1c0,0.3-0.3,0.5-0.5,0.4c-0.1,0-0.1,0-0.2,0 C87.3,97.8,87.1,97.6,87.2,97.4z M43.7,73.6c0.2-1.6,0.7-3.2,1.5-4.8l0.1-0.1c0.1-0.2,0.4-0.3,0.7-0.2c0,0,0,0,0,0 c0.2,0.1,0.3,0.4,0.2,0.7l-0.1,0.1c-0.7,1.5-1.2,3-1.4,4.5c0,0.3-0.3,0.5-0.6,0.4c-0.1,0-0.1,0-0.2,0 C43.8,74,43.7,73.8,43.7,73.6z M60,79.8c-0.2-0.1-0.3-0.5-0.1-0.7c0.4-0.6,0.8-1.3,1.1-2c0.4-0.8,0.7-1.6,1-2.4 c0.1-0.3,0.4-0.4,0.6-0.3c0.3,0.1,0.4,0.4,0.3,0.6c-0.3,0.9-0.7,1.7-1.1,2.5c-0.4,0.7-0.8,1.4-1.2,2.1C60.5,79.9,60.2,80,60,79.8 C60,79.9,60,79.8,60,79.8z M86.8,87.5c-0.3-1.6-0.7-3.2-1.2-4.8c-0.1-0.3,0.1-0.5,0.3-0.6c0.3-0.1,0.5,0.1,0.6,0.3 c0.5,1.6,1,3.3,1.2,4.9c0,0.3-0.1,0.5-0.4,0.6c-0.1,0-0.2,0-0.3,0C87,87.7,86.9,87.6,86.8,87.5z M48.2,65.1 c-0.2-0.2-0.2-0.5,0-0.7c1.2-1.3,2.5-2.4,3.9-3.4c0.2-0.1,0.5-0.1,0.7,0.1c0.1,0.2,0.1,0.5-0.1,0.7c-1.4,0.9-2.6,2-3.7,3.2 c-0.2,0.2-0.4,0.2-0.6,0.1C48.3,65.2,48.3,65.1,48.2,65.1z M63.3,70c0.3-1.6,0.5-3.3,0.5-4.9c0-0.3,0.2-0.5,0.5-0.5 c0.3,0,0.5,0.2,0.5,0.5c-0.1,1.7-0.2,3.4-0.5,5.1c0,0.3-0.3,0.4-0.6,0.4c0,0-0.1,0-0.1,0C63.3,70.4,63.2,70.2,63.3,70z M83.8,78 c-0.7-1.5-1.5-3-2.4-4.3c-0.1-0.2-0.1-0.5,0.1-0.7c0.2-0.1,0.5-0.1,0.7,0.2c0.9,1.4,1.7,2.9,2.5,4.4c0.1,0.2,0,0.5-0.2,0.7 c-0.1,0.1-0.3,0.1-0.4,0C83.9,78.2,83.8,78.1,83.8,78z M56.5,59.6c-0.1-0.3,0.1-0.5,0.4-0.6c1.7-0.4,3.4-0.5,5.2-0.3 c0.3,0,0.5,0.3,0.4,0.5c0,0.3-0.3,0.5-0.5,0.4c-1.7-0.2-3.3-0.1-4.8,0.3c-0.1,0-0.2,0-0.3,0C56.6,59.8,56.5,59.7,56.5,59.6z  M78.4,69.7c-1.1-1.3-2.2-2.5-3.4-3.6c-0.2-0.2-0.2-0.5,0-0.7c0.2-0.2,0.5-0.2,0.7,0c1.2,1.1,2.4,2.4,3.5,3.7 c0.2,0.2,0.1,0.5-0.1,0.7c-0.2,0.1-0.4,0.1-0.5,0.1C78.5,69.8,78.4,69.7,78.4,69.7z M63.6,60.1c-0.2-1.6-0.4-3.3-0.8-4.9 c-0.1-0.3,0.1-0.5,0.4-0.6c0.3-0.1,0.5,0.1,0.6,0.4c0.4,1.7,0.7,3.4,0.8,5c0,0.3-0.2,0.5-0.4,0.5c-0.1,0-0.2,0-0.3,0 C63.7,60.4,63.6,60.2,63.6,60.1z M71,63.1c-1.4-0.9-2.9-1.7-4.4-2.3c-0.3-0.1-0.4-0.4-0.3-0.6c0.1-0.3,0.4-0.4,0.6-0.3 c1.5,0.6,3.1,1.4,4.6,2.3c0.2,0.1,0.3,0.5,0.1,0.7C71.6,63.1,71.3,63.2,71,63.1C71.1,63.1,71.1,63.1,71,63.1z M61.3,50.4 c-0.6-1.5-1.3-3-2.1-4.5c-0.1-0.2-0.1-0.5,0.2-0.7c0.2-0.1,0.5-0.1,0.7,0.2c0.9,1.5,1.6,3.1,2.2,4.6c0.1,0.3,0,0.5-0.3,0.6 c-0.1,0.1-0.3,0-0.4,0C61.5,50.6,61.4,50.5,61.3,50.4z M56.5,41.8c-1-1.3-2.1-2.6-3.2-3.8c-0.2-0.2-0.2-0.5,0-0.7 c0.2-0.2,0.5-0.2,0.7,0c1.2,1.3,2.3,2.6,3.3,3.9c0.2,0.2,0.1,0.5-0.1,0.7c-0.2,0.1-0.4,0.1-0.5,0C56.6,41.9,56.5,41.8,56.5,41.8z  M49.7,34.5c-1.2-1.1-2.5-2.1-3.9-3.2c-0.2-0.2-0.3-0.5-0.1-0.7c0.2-0.2,0.5-0.3,0.7-0.1c1.4,1,2.7,2.1,3.9,3.2 c0.2,0.2,0.2,0.5,0,0.7c-0.2,0.2-0.4,0.2-0.6,0.1C49.7,34.6,49.7,34.5,49.7,34.5z M41.7,28.5c-1.4-0.9-2.8-1.8-4.3-2.6 c-0.2-0.1-0.3-0.4-0.2-0.7c0.1-0.2,0.4-0.3,0.7-0.2c1.5,0.8,2.9,1.7,4.3,2.6c0.2,0.1,0.3,0.5,0.1,0.7 C42.2,28.6,42,28.6,41.7,28.5C41.7,28.5,41.7,28.5,41.7,28.5z"></path>
+														<path class="fill-white" d="M30.7,22.6C30.7,22.6,30.7,22.6,30.7,22.6c0,0,0.9,0.4,2.3,1c0.2,0.1,0.5,0,0.7-0.2c0.1-0.2,0-0.5-0.2-0.7 c0,0,0,0,0,0c-1.4-0.7-2.2-1-2.3-1c-0.3-0.1-0.5,0-0.6,0.3C30.3,22.2,30.4,22.5,30.7,22.6z"></path>
+														<path class="fill-warning" d="M22.6,23.6l-1.1-4.1c0,0-11.7-7.5-11.9-7.6c-0.1-0.2-4.9-6.5-4.9-6.5l8.2,3.5l12.2,8.4L22.6,23.6z"></path>
+														<polygon class="fill-warning opacity-6" points="31.2,12.3 4.7,5.4 25.1,17.2"></polygon>
+														<polygon class="fill-warning opacity-6" points="21.5,19.5 15,24.8 4.7,5.4 "></polygon>
+													</svg>
+												</figure>
+												<!-- Body -->
+												<div class="card-body">
+													<!-- Title -->
+													<h5 class="card-title text-white mb-2">احصل على 25 ألف دورة تدريبية عبر الإنترنت من 120 مؤسسة، ابدأ اليوم!</h5>
+													<p class="text-white text-opacity-75">فيما يلي وصف للميزات المتميزة التي ستتيح للمستخدمين الحصول على الفوائد وتوفير الكثير من المال</p>
+													<!-- Button -->
+													<a href="#" class="btn btn-sm btn-dark mb-0">شراء بريميوم</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li> <a class="dropdown-item" href="#">موسيقى</a></li>
+							<li> <a class="dropdown-item" href="#">نمط الحياة</a></li>
+							<li> <a class="dropdown-item" href="#">تكنولوجيا المعلومات والبرمجيات</a></li>
+							<li> <a class="dropdown-item" href="#">تطوير الذات</a></li>
+							<li> <a class="dropdown-item" href="#">الصحة واللياقة البدنية</a></li>
+							<li> <a class="dropdown-item" href="#">تعليم</a></li>
+							<li> <a class="dropdown-item" href="#">علوم اجتماعية</a></li>
+							<li> <a class="dropdown-item" href="#">الرياضيات والمنطق</a></li>
+							<li> <hr class="dropdown-divider"></li>
+							<li> <a class="dropdown-item bg-primary text-primary bg-opacity-10 rounded-2 mb-0" href="allcourses.html">تصفح الدورات التدريبية</a></li>
+						</ul>
+					</li>
+					<!-- Nav item 2 Instructors -->
+					<li class="nav-item ">
+						<a class="nav-link " href="instructor.html"  >المدربين</a>
+					</li>
+
+					<!-- Nav item 3 link-->
+
+					<li class="nav-item ">
+						<a class="nav-link btn-danger-soft bg-danger bg-opacity-10 rounded-3 text-danger px-3 py-3 py-xl-0 " href="pricing.html"  >اشترك</a>
+					</li>
+
+				</ul>
+				<!-- Nav Main menu END -->
+
+				<!-- Nav Search START -->
+				<div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
+					<div class="nav-item w-100">
+						<form class="position-relative">
+							<input class="form-control pe-5 bg-transparent" type="search" placeholder="ابحث عن دورات تدريبية" aria-label="Search">
+							<button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
+								<i class="fas fa-search fs-6 "></i>
+							</button>
+						</form>
+					</div>
+				</div>
+				<!-- Nav Search END -->
+
+				
+				
+				<!-- Dark Mode Option Start -->
+				<div class="dropdown nav my-3 my-xl-0 pe-3 flex-nowrap align-items-center">
+					<button class="btn btn-light btn-sm lh-1 p-2 mb-0" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-circle-half fa-fw theme-icon-active" viewBox="0 0 16 16">
+							<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+							<use href="#"></use>
+						</svg>
+					</button>
+	
+					<ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
+						<li class="mb-1">
+							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+								<svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+									<use href="#"></use>
+								</svg>Light
+							</button>
+						</li>
+						<li class="mb-1">
+							<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+									<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+									<use href="#"></use>
+								</svg>Dark
+							</button>
+						</li>
+						<li>
+							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+									<use href="#"></use>
+								</svg>Auto
+							</button>
+						</li>
+					</ul>
+				</div>
+				<!-- Dark Mode Option End -->
+				<!-- language start -->
+				<div class="dropdown nav my-3 my-xl-0 pe-3 flex-nowrap align-items-center">
+					<a class="btn btn-light btn-sm lh-1 p-2 mb-0" id="bd-theme" href="course-detail-EN.html" >
+						<span class="fs-6">EN</span>
+					</a>
+				</div>
+				<!-- language End -->
+
+			</div>
+			<!-- Main navbar END -->
+			
+			<!-- Profile START -->
+			<div class="dropdown ms-1 ms-lg-0">
+				<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+					<img class="avatar-img rounded-circle" src="assets/images/avatar/08.jpg" alt="avatar">
+				</a>
+				<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+					<!-- Profile info -->
+					<li class="px-3 mb-3">
+						<div class="d-flex align-items-center">
+							<!-- Avatar -->
+							<div class="avatar me-3">
+								<img class="avatar-img rounded-circle shadow" src="assets/images/avatar/08.jpg" alt="avatar">
+							</div>
+							<div>
+								<a class="h6" href="student-dashboard.html">فارس محمد</a>
+								<p class="small m-0">Fares@gmail.com</p>
+							</div>
+						</div>
+					</li>
+					<li> <hr class="dropdown-divider"></li>
+					<!-- Links -->
+					<li><a class="dropdown-item" href="student-edit-profile.html"><i class="bi bi-person fa-fw me-2"></i>تعديل الملف الشخصي</a></li>
+					<li><a class="dropdown-item" href="student-setting.html"><i class="bi bi-gear fa-fw me-2"></i>إعدادت الحساب</a></li>
+					<li> <a class="dropdown-item" href="student-delete-account.html"><i class="fas fa-fw fa-trash-alt me-1"></i>حذف الملف الشخصي</a> </li>
+					<li><a class="dropdown-item" href="help.html"><i class="bi bi-info-circle fa-fw me-2"></i>مساعدة</a></li>
+					<li><a class="dropdown-item bg-danger-soft-hover" href="sign-in.html"><i class="bi bi-power fa-fw me-2"></i>خروج</a></li>
+
+				</ul>
+			</div>
+			<!-- Profile START -->
+		</div>
+	</nav>
+	<!-- Nav END -->
+</header>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Page intro START -->
+<section class="bg-light py-0 py-sm-5">
+	<div class="container">
+		<div class="row py-5">
+			<div class="col-lg-8">
+				<!-- Badge -->
+				<h6 class="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">التسويق الرقمي</h6>
+				<!-- Title -->
+				<h1 class="mb-4">دورة التسويق الرقمي الكاملة - 12 دورة في 1</h1>
+				<p >راضي عن نقل معال قانع بأنه رجل مقبول. مذكرة احمرار خاصة تمت إزالتها بشكل متساوٍ تمامًا إذا. سلمت الكآبة الاعتراض اللازم هل ساد السيد. السيد الشعور يقوم بعمل ودي في المقام الأول.</p>
+				<!-- Content -->
+				<ul class="list-inline mb-0">
+					<li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
+					<li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i class="fas fa-user-graduate text-orange me-2"></i>12k المقيدين</li>
+					<li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i class="fas fa-signal text-success me-2"></i> كل المستويات</li>
+					<li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i class="bi bi-patch-exclamation-fill text-danger me-2"></i>آخر تحديث 09/2021</li>
+					<li class="list-inline-item h6 mb-0"><i class="fas fa-globe text-info me-2"></i>عربي</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Page intro END -->
+
+<!-- =======================
+Page content START -->
+<section class="pb-0 py-lg-5">
+	<div class="container">
+		<div class="row">
+			<!-- Main content START -->
+			<div class="col-lg-8">
+				<div class="card shadow rounded-2 p-0">
+					<!-- Tabs START -->
+					<div class="card-header border-bottom px-4 py-3">
+						<ul class="nav nav-pills nav-tabs-line py-0" id="course-pills-tab" role="tablist">
+							<!-- Tab item -->
+							<li class="nav-item me-2 me-sm-4" role="presentation">
+								<button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-1" data-bs-toggle="pill" data-bs-target="#course-pills-1" type="button" role="tab" aria-controls="course-pills-1" aria-selected="true">ملخص</button>
+							</li>
+							<!-- Tab item -->
+							<li class="nav-item me-2 me-sm-4" role="presentation">
+								<button class="nav-link mb-2 mb-md-0" id="course-pills-tab-2" data-bs-toggle="pill" data-bs-target="#course-pills-2" type="button" role="tab" aria-controls="course-pills-2" aria-selected="false">مقرر</button>
+							</li>
+							<!-- Tab item -->
+							<li class="nav-item me-2 me-sm-4" role="presentation">
+								<button class="nav-link mb-2 mb-md-0" id="course-pills-tab-3" data-bs-toggle="pill" data-bs-target="#course-pills-3" type="button" role="tab" aria-controls="course-pills-3" aria-selected="false">مدرب</button>
+							</li>
+							<!-- Tab item -->
+							<li class="nav-item me-2 me-sm-4" role="presentation">
+								<button class="nav-link mb-2 mb-md-0" id="course-pills-tab-4" data-bs-toggle="pill" data-bs-target="#course-pills-4" type="button" role="tab" aria-controls="course-pills-4" aria-selected="false">المراجعات</button>
+							</li>
+							<!-- Tab item -->
+							<li class="nav-item me-2 me-sm-4" role="presentation">
+								<button class="nav-link mb-2 mb-md-0" id="course-pills-tab-5" data-bs-toggle="pill" data-bs-target="#course-pills-5" type="button" role="tab" aria-controls="course-pills-5" aria-selected="false">الأسئلة الشائعة </button>
+							</li>
+							<!-- Tab item -->
+							<li class="nav-item me-2 me-sm-4" role="presentation">
+								<button class="nav-link mb-2 mb-md-0" id="course-pills-tab-6" data-bs-toggle="pill" data-bs-target="#course-pills-6" type="button" role="tab" aria-controls="course-pills-6" aria-selected="false">التعليقات</button>
+							</li>
+						</ul>
+					</div>
+					<!-- Tabs END -->
+
+					<!-- Tab contents START -->
+					<div class="card-body p-4">
+						<div class="tab-content pt-2" id="course-pills-tabContent">
+							<!-- Content START -->
+							<div class="tab-pane fade show active" id="course-pills-1" role="tabpanel" aria-labelledby="course-pills-tab-1">
+								<!-- Course detail START -->
+								<h5 class="mb-3">وصف الدورة التدريبية</h5>
+								<p class="mb-3">أهلا بك في <strong> حزمة الدورات التدريبية النهائية للتسويق الرقمي - 12 دورة في دورة واحدة (أكثر من 36 ساعة من المحتوى)</strong></p>
+								<p class="mb-3">في هذا التدريب العملي، ستتعلم كيف تصبح خبيرًا في التسويق الرقمي في هذا المجال<strong> حزمة الدورات التدريبية النهائية التي تتضمن 12 دورة للتسويق الرقمي في دورة واحدة!</strong></p>
+								<p class="mb-3">إذا كنت ترغب في معرفة المهارات التي يجب تغطيتها في منهج دورة التسويق الرقمي الأساسية في الهند أو في أي مكان حول العالم، فإن قراءة هذه المدونة ستساعدك. قبل أن نخوض في المتقدمة<strong><a href="#" class="text-reset text-decoration-underline">دورة التسويق الرقمي</a></strong> المنهج، دعونا نلقي نظرة على نطاق التسويق الرقمي وما يخبئه المستقبل.</p>
+								<p class="mb-0">نحن نركز كثيرًا على فهم علم النفس السلوكي ومحفزات التأثير التي تعتبر ضرورية لكي نصبح مسوقًا رقميًا جيدًا. نحن ندرك أن النظرية مهمة لبناء أساس متين، وندرك أن النظرية وحدها لن تنجز المهمة، ولهذا السبب تمتلئ هذه الدورة بأمثلة عملية يمكنك اتباعها خطوة بخطوة.</p>
+								
+								<!-- List content -->
+								<h5 class="mt-4">ما ستتعلمه</h5>
+								<ul class="list-group list-group-borderless mb-3">
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>مقدمة دورة التسويق الرقمي</li>
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>دورة حياة العميل</li>
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>ما هو تحسين محركات البحث (SEO)؟</li>
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>إعلانات الفيسبوك</li>
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>فيسبوك ماسنجر شات بوت</li>
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>أدوات تحسين محرك البحث</li>
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>لماذا SEO</li>
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>هيكل URL</li>
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>مقتطف مميز</li>
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>SEO النصائح والحيل</li>
+									<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>مدير العلامات جوجل</li>
+								</ul>
+
+								<p class="mb-0">كما يتناقض ذلك مع أداة التقدير. الحجم مثل الجسم الذي كان لدى شخص ما. هل سلوك مشاهدة الصبي محضر تبرر النفقات؟ السلوك المقبول قد يعترف بالبنات التي تسيء إلى طلبها. تأثير الحمد يرغب في تغيير الطريقة وأي مطلوب. بدا الاستخدام النشط في الاعتبار الأخير. هل هو جزء آخر في.</p>
+								<!-- Course detail END -->
+
+							</div>
+							<!-- Content END -->
+
+							<!-- Content START -->
+							<div class="tab-pane fade" id="course-pills-2" role="tabpanel" aria-labelledby="course-pills-tab-2">
+								<!-- Course accordion START -->
+								<div class="accordion accordion-icon accordion-bg-light" id="accordionExample2">
+									<!-- Item -->
+									<div class="accordion-item mb-3">
+										<h6 class="accordion-header font-base" id="heading-1">
+											<button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+												مقدمة عن التسويق الرقمي 
+												<span class="small ms-0 ms-sm-2">(3 محاضرة)</span> 
+											</button>
+										</h6>
+										<div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="heading-1" data-bs-parent="#accordionExample2">
+											<div class="accordion-body mt-3">
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">مقدمة</span>
+													</div>
+													<p class="mb-0">2د 10ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px"> ما هو التسويق الرقمي ما هو التسويق الرقمي</span>
+													</div>
+													<p class="mb-0 text-truncate">15د 10ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">نوع التسويق الرقمي</span>
+													</div>
+													<p class="mb-0">18د 10ث</p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Item -->
+									<div class="accordion-item mb-3">
+										<h6 class="accordion-header font-base" id="heading-2">
+											<button class="accordion-button fw-bold collapsed rounded d-sm-flex d-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+												دورة حياة العميل
+												<span class="small ms-0 ms-sm-2">(4 محاضرة)</span> 
+											</button>
+										</h6>
+										<div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordionExample2">
+											<!-- Accordion body START -->
+											<div class="accordion-body mt-3">
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">What is Digital Marketing</span>
+													</div>
+													<p class="mb-0">11m 20s</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">15 نصيحة لكتابة العناوين المغناطيسية</span>
+													</div>
+													<p class="mb-0 text-truncate">25د 20ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">كيف تكتب كما يتحدث عملاؤك</span>
+													</div>
+													<p class="mb-0">11د 30ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<div>
+															<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
+																<i class="fas fa-play me-0"></i>
+															</a>
+														</div>
+														<div class="row g-sm-0 align-items-center">
+															<div class="col-sm-6">
+																<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-md-400px">كيفية تحويل الميزات إلى فوائد</span>
+															</div>
+															<div class="col-sm-6">
+																<span class="badge text-bg-orange ms-2 ms-md-0"><i class="fas fa-lock fa-fw me-1"></i>مدفوع</span>
+															</div>
+														</div>
+													</div>
+													<p class="mb-0 d-inline-block text-truncate w-70px w-sm-60px">35د 30ث</p>
+												</div>
+											</div>
+											<!-- Accordion body END -->
+										</div>
+									</div>
+
+									<!-- Item -->
+									<div class="accordion-item mb-3">
+										<h6 class="accordion-header font-base" id="heading-5">
+											<button class="accordion-button fw-bold collapsed rounded d-sm-flex d-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+												ما هو تسهيل محركات البحث (SEO) 
+												<span class="small ms-0 ms-sm-2">(10 محاضرة)</span> 
+											</button>
+										</h6>
+										<div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#accordionExample2">
+											<!-- Accordion body START -->
+											<div class="accordion-body mt-3">
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">مقدمة</span>
+													</div>
+													<p class="mb-0">1د 10ث</p>
+												</div>
+													
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">نظرة عامة على SEO</span>
+													</div>
+													<p class="mb-0 text-truncate">11د 03ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">كيفية تحسين محركات البحث (SEO) لصفحتك الرئيسية</span>
+													</div>
+													<p class="mb-0">15د 00ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">كيفية تحسين محركات البحث (SEO) لصفحتك الرئيسية</span>
+													</div>
+													<p class="mb-0">15د 00ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">كيفية كتابة علامات العنوان لمحركات البحث التي تحبها</span>
+													</div>
+													<p class="mb-0">25د 30ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">SEO تخطيط الكلمات الرئيسية</span>
+													</div>
+													<p class="mb-0">18د 10ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">التجارة الإلكترونية SEO</span>
+													</div>
+													<p class="mb-0">28د 10ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">الروابط الداخلية والخارجية</span>
+													</div>
+													<p class="mb-0">45د 10ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">متحرك SEO</span>
+													</div>
+													<p class="mb-0">8د 10ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">الصفحة خارج SEO</span>
+													</div>
+													<p class="mb-0">18د 10ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">قياس فعالية تحسين محركات البحث</span>
+													</div>
+													<p class="mb-0">35د 10ث</p>
+												</div>
+											</div>
+											<!-- Accordion body END -->
+										</div>
+									</div>
+
+									<!-- Item -->
+									<div class="accordion-item mb-3">
+										<h6 class="accordion-header font-base" id="heading-6">
+											<button class="accordion-button fw-bold collapsed rounded d-block d-sm-flex d-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
+												إعلانات الفيسبوك 
+												<span class="small ms-0 ms-sm-2">(3 محاضرة)</span> 
+											</button>
+										</h6>
+										<div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6" data-bs-parent="#accordionExample2">
+											<!-- Accordion body START -->
+											<div class="accordion-body mt-3">
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">مقدمة</span>
+													</div>
+													<p class="mb-0">1د 20ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">إنشاء صفحات الفيسبوك</span>
+													</div>
+													<p class="mb-0 text-truncate">25د 20ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">عنوان URL المخصص لصفحة الفيسبوك</span>
+													</div>
+													<p class="mb-0">11د 30ث</p>
+												</div>
+											</div>
+											<!-- Accordion body END -->
+										</div>	
+									</div>
+
+									<!-- Item -->
+									<div class="accordion-item mb-3">
+										<h6 class="accordion-header font-base" id="heading-7">
+											<button class="accordion-button fw-bold collapsed rounded d-sm-flex d-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">
+												التسويق على اليوتيوب 
+												<span class="small ms-0 ms-sm-2">(5 محاضرة)</span> 
+											</button>
+										</h6>
+										<div id="collapse-7" class="accordion-collapse collapse" aria-labelledby="heading-7" data-bs-parent="#accordionExample2">
+											<!-- Accordion body START -->
+											<div class="accordion-body mt-3">
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">تدفق الفيديو</span>
+													</div>
+													<p class="mb-0">25د 20ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">أداة مشرفي المواقع</span>
+													</div>
+													<p class="mb-0 text-truncate">15د 20ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">محتويات مميزة على القناة</span>
+													</div>
+													<p class="mb-0">32د 20ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<div>
+															<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
+																<i class="fas fa-play me-0"></i>
+															</a>
+														</div>
+														<div class="row g-sm-0 align-items-center">
+															<div class="col-sm-6">
+																<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-md-400px">إدارة التعليقات</span>
+															</div>
+															<div class="col-sm-6">
+																<span class="badge text-bg-orange ms-2 ms-md-0"><i class="fas fa-lock fa-fw me-1"></i>مدفوع</span>
+															</div>
+														</div>
+													</div>
+													<p class="mb-0 d-inline-block text-truncate w-70px w-sm-60px">20د 20ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<div>
+															<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
+																<i class="fas fa-play me-0"></i>
+															</a>
+														</div>
+														<div class="row g-sm-0 align-items-center">
+															<div class="col-sm-6">
+																<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-md-400px">تحليلات القناة</span>
+															</div>
+															<div class="col-sm-6">
+																<span class="badge text-bg-orange ms-2 ms-md-0"><i class="fas fa-lock fa-fw me-1"></i>مدفوع</span>
+															</div>
+														</div>
+													</div>
+													<p class="mb-0 d-inline-block text-truncate w-70px w-sm-60px">18د 20ث</p>
+												</div>
+											</div>
+											<!-- Accordion body END -->
+										</div>
+									</div>
+									
+									<!-- Item -->
+									<div class="accordion-item mb-3">
+										<h6 class="accordion-header font-base" id="heading-8">
+											<button class="accordion-button fw-bold collapsed rounded d-sm-flex d-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-8" aria-expanded="false" aria-controls="collapse-8">
+												لماذا SEO 
+												<span class="small ms-0 ms-sm-2">(8 محاضرة)</span> 
+											</button>
+										</h6>
+										<div id="collapse-8" class="accordion-collapse collapse" aria-labelledby="heading-8" data-bs-parent="#accordionExample2">
+											<!-- Accordion body START -->
+											<div class="accordion-body mt-3">
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">فهم SEO</span>
+													</div>
+													<p class="mb-0">20د 20ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">على الصفحة SEO</span>
+													</div>
+													<p class="mb-0 text-truncate">15د 20ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">محلي SEO</span>
+													</div>
+													<p class="mb-0">16د 20ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">قياس فعالية تحسين محركات البحث</span>
+													</div>
+													<p class="mb-0">12د 20ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<div>
+															<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
+																<i class="fas fa-play me-0"></i>
+															</a>
+														</div>
+														<div class="row g-sm-0 align-items-center">
+															<div class="col-sm-6">
+																<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-md-400px">الكلمات الرئيسية في المدونة والمقالات</span>
+															</div>
+															<div class="col-sm-6">
+																<span class="badge text-bg-orange ms-2 ms-md-0"><i class="fas fa-lock fa-fw me-1"></i>مدفوع</span>
+															</div>
+														</div>
+													</div>
+													<p class="mb-0 d-inline-block text-truncate w-70px w-sm-60px">15د 20ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<div>
+															<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
+																<i class="fas fa-play me-0"></i>
+															</a>
+														</div>
+														<div class="row g-sm-0 align-items-center">
+															<div class="col-sm-6">
+																<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-md-400px">SEO تخطيط الكلمات الرئيسية</span>
+															</div>
+															<div class="col-sm-6">
+																<span class="badge text-bg-orange ms-2 ms-md-0"><i class="fas fa-lock fa-fw me-1"></i>مدفوع</span>
+															</div>
+														</div>
+													</div>
+													<p class="mb-0 d-inline-block text-truncate w-70px w-sm-60px">36د 12ث</p>
+												</div>
+											</div>
+											<!-- Accordion body END -->
+										</div>
+									</div>	
+
+									<!-- Item -->
+									<div class="accordion-item mb-3">
+										<h6 class="accordion-header font-base" id="heading-9">
+											<button class="accordion-button fw-bold collapsed rounded d-sm-flex d-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-9" aria-expanded="false" aria-controls="collapse-9">
+												مدير العلامات جوجل  
+												<span class="small ms-0 ms-sm-2">(4 محاضرة)</span> 
+											</button>
+										</h6>
+										<div id="collapse-9" class="accordion-collapse collapse" aria-labelledby="heading-9" data-bs-parent="#accordionExample2">
+											<!-- Accordion body START -->
+											<div class="accordion-body mt-3">
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">G+ الصفحات في مرتبة أعلى</span>
+													</div>
+													<p class="mb-0">13د 20ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">إضافة روابط الاتصال</span>
+													</div>
+													<p class="mb-0 text-truncate">7د 20ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">جوجل هانج آوتس</span>
+													</div>
+													<p class="mb-0">12د 20ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px"> جوجل الأعمال المحلية</span>
+													</div>
+													<p class="mb-0 text-truncate">7د 20ث</p>
+												</div>
+											</div>
+											<!-- Accordion body END -->
+										</div>
+									</div>	
+
+									<!-- Item -->
+									<div class="accordion-item mb-0">
+										<h6 class="accordion-header font-base" id="heading-10">
+											<button class="accordion-button fw-bold collapsed rounded d-sm-flex d-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-10" aria-expanded="false" aria-controls="collapse-10">
+												التكامل مع الموقع 
+												<span class="small ms-0 ms-sm-2">(3 محاضرة)</span> 
+											</button>
+										</h6>
+										<div id="collapse-10" class="accordion-collapse collapse" aria-labelledby="heading-10" data-bs-parent="#accordionExample2">
+											<!-- Accordion body START -->
+											<div class="accordion-body mt-3">
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">إنشاء حساب لينكدإن</span>
+													</div>
+													<p class="mb-0 text-truncate">13د 20ث</p>
+												</div>
+												
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">البحث المتقدم</span>
+													</div>
+													<p class="mb-0">31د 20ث</p>
+												</div>
+
+												<hr> <!-- Divider -->
+
+												<!-- Course lecture -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="position-relative d-flex align-items-center">
+														<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+															<i class="fas fa-play me-0"></i>
+														</a>
+														<span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">تطبيق لينكد إن للهواتف المحمولة</span>
+													</div>
+													<p class="mb-0 text-truncate">25د 20ث</p>
+												</div>
+											</div>
+											<!-- Accordion body END -->
+										</div>
+									</div>	
+
+								</div>
+								<!-- Course accordion END -->
+							</div>
+							<!-- Content END -->
+
+							<!-- Content START -->
+							<div class="tab-pane fade" id="course-pills-3" role="tabpanel" aria-labelledby="course-pills-tab-3">
+								<!-- Card START -->
+								<div class="card mb-0 mb-md-4">
+									<div class="row g-0 align-items-center">
+										<div class="col-md-5">
+											<!-- Image -->
+											<img src="assets/images/instructor/01.jpg" class="img-fluid rounded-3" alt="instructor-image">
+										</div>
+										<div class="col-md-7">
+											<!-- Card body -->
+											<div class="card-body">
+												<!-- Title -->
+												<h3 class="card-title mb-0">لويس فيرجسون</h3>
+												<p class="mb-2">مدرس التسويق</p>
+												<!-- Social button -->
+												<ul class="list-inline mb-3">
+													<li class="list-inline-item me-3">
+														<a href="#" class="fs-5 text-twitter"><i class="fab fa-twitter-square"></i></a>
+													</li>
+													<li class="list-inline-item me-3">
+														<a href="#" class="fs-5 text-instagram"><i class="fab fa-instagram-square"></i></a>
+													</li>
+													<li class="list-inline-item me-3">
+														<a href="#" class="fs-5 text-facebook"><i class="fab fa-facebook-square"></i></a>
+													</li>
+													<li class="list-inline-item me-3">
+														<a href="#" class="fs-5 text-linkedin"><i class="fab fa-linkedin"></i></a>
+													</li>
+													<li class="list-inline-item">
+														<a href="#" class="fs-5 text-youtube"><i class="fab fa-youtube-square"></i></a>
+													</li>
+												</ul>
+
+												<!-- Info -->
+												<ul class="list-inline">
+													<li class="list-inline-item">
+														<div class="d-flex align-items-center me-3 mb-2">
+															<span class="icon-md bg-orange bg-opacity-10 text-orange rounded-circle"><i class="fas fa-user-graduate"></i></span>
+															<span class="h6 fw-light mb-0 ms-2">9.1k</span>
+														</div>
+													</li>
+													<li class="list-inline-item">
+														<div class="d-flex align-items-center me-3 mb-2">
+															<span class="icon-md bg-warning bg-opacity-15 text-warning rounded-circle"><i class="fas fa-star"></i></span>
+															<span class="h6 fw-light mb-0 ms-2">4.5</span>
+														</div>
+													</li>
+													<li class="list-inline-item">
+														<div class="d-flex align-items-center me-3 mb-2">
+															<span class="icon-md bg-danger bg-opacity-10 text-danger rounded-circle"><i class="fas fa-play"></i></span>
+															<span class="h6 fw-light mb-0 ms-2">29 دورة</span>
+														</div>
+													</li>
+													<li class="list-inline-item">
+														<div class="d-flex align-items-center me-3 mb-2">
+															<span class="icon-md bg-info bg-opacity-10 text-info rounded-circle"><i class="fas fa-comment-dots"></i></span>
+															<span class="h6 fw-light mb-0 ms-2">205</span>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Card END -->
+								
+								<!-- Instructor info -->
+								<h5 class="mb-3">حول المدرب</h5>
+								<p class="mb-3">وفاء الاتجاه باستعماله المستمر وضبطه على اللياقة المستمرة. رأى التقى صفق للمفضلة الناقصة المنغمسة في إخفاءها ولها. اختتم الصبي الافتراض القديم الدائم. أبعد ما يتعلق بالسرير ومرور الراحة المدنية. لوحة القيادة ترى قدرات الاعتراض الصراحة. كما سارعت يا احتمال المنتجة قبل أن تصل صباحا. وضع تشكيل ناي يبدو قديمًا ومتزوجًا قليلًا. تخلصت مارجريت من الإضافة التي تم عرضها والتي تم عرضها ستة ويقول إن ضربته محصورة. </p>
+								<p class="mb-3">كما يتناقض ذلك مع أداة التقدير. الحجم مثل الجسم الذي كان لدى شخص ما. هل سلوك مشاهدة الصبي محضر تبرر النفقات؟ السلوك المقبول قد يعترف بالبنات التي تسيء إلى طلبها. تأثير الحمد يرغب في تغيير الطريقة وأي مطلوب.</p>
+								<!-- Email address -->
+								<div class="col-12">
+									<ul class="list-group list-group-borderless mb-0">
+										<li class="list-group-item pb-0">رقم البريد:<a href="#" class="ms-2">hello@email.com</a></li>
+										<li class="list-group-item pb-0">ويب:<a href="#" class="ms-2">https://eduport.com</a></li>
+									</ul>
+								</div>
+							</div>
+							<!-- Content END -->
+
+							<!-- Content START -->
+							<div class="tab-pane fade" id="course-pills-4" role="tabpanel" aria-labelledby="course-pills-tab-4">
+								<!-- Review START -->
+								<div class="row mb-4">
+									<h5 class="mb-4">مراجعات طلابنا</h5>
+
+									<!-- Rating info -->
+									<div class="col-md-4 mb-3 mb-md-0">
+										<div class="text-center">
+											<!-- Info -->
+											<h2 class="mb-0">4.5</h2>
+											<!-- Star -->
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-half-alt text-warning"></i></li>
+											</ul>
+											<p class="mb-0">(بناءً على مراجعة اليوم)</p>
+										</div>
+									</div>
+
+									<!-- Progress-bar and star -->
+									<div class="col-md-8">
+										<div class="row align-items-center">
+											<!-- Progress bar and Rating -->
+											<div class="col-6 col-sm-8">
+												<!-- Progress item -->
+												<div class="progress progress-sm bg-warning bg-opacity-15">
+													<div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+											</div>
+
+											<div class="col-6 col-sm-4">
+												<!-- Star item -->
+												<ul class="list-inline mb-0">
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+												</ul>
+											</div>
+
+											<!-- Progress bar and Rating -->
+											<div class="col-6 col-sm-8">
+												<!-- Progress item -->
+												<div class="progress progress-sm bg-warning bg-opacity-15">
+													<div class="progress-bar bg-warning" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+											</div>
+
+											<div class="col-6 col-sm-4">
+												<!-- Star item -->
+												<ul class="list-inline mb-0">
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
+												</ul>
+											</div>
+
+											<!-- Progress bar and Rating -->
+											<div class="col-6 col-sm-8">
+												<!-- Progress item -->
+												<div class="progress progress-sm bg-warning bg-opacity-15">
+													<div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+											</div>
+
+											<div class="col-6 col-sm-4">
+												<!-- Star item -->
+												<ul class="list-inline mb-0">
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
+												</ul>
+											</div>
+
+											<!-- Progress bar and Rating -->
+											<div class="col-6 col-sm-8">
+												<!-- Progress item -->
+												<div class="progress progress-sm bg-warning bg-opacity-15">
+													<div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+											</div>
+
+											<div class="col-6 col-sm-4">
+												<!-- Star item -->
+												<ul class="list-inline mb-0">
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
+												</ul>
+											</div>
+
+											<!-- Progress bar and Rating -->
+											<div class="col-6 col-sm-8">
+												<!-- Progress item -->
+												<div class="progress progress-sm bg-warning bg-opacity-15">
+													<div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+											</div>
+
+											<div class="col-6 col-sm-4">
+												<!-- Star item -->
+												<ul class="list-inline mb-0">
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Review END -->
+
+								<!-- Student review START -->
+								<div class="row">
+									<!-- Review item START -->
+									<div class="d-md-flex my-4">
+										<!-- Avatar -->
+										<div class="avatar avatar-xl me-4 flex-shrink-0">
+											<img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar">
+										</div>
+										<!-- Text -->
+										<div>
+											<div class="d-sm-flex mt-1 mt-md-0 align-items-center">
+												<h5 class="me-3 mb-0">جاكلين ميلر</h5>
+												<!-- Review star -->
+												<ul class="list-inline mb-0">
+													<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
+												</ul>
+											</div>
+											<!-- Info -->
+											<p class="small mb-2">منذ 2 أيام</p>
+											<p class="mb-2">إدراك نهاية المعرفة بالتأكيد يوم الحلاوة لماذا بكل ود. اطلب عرضًا سريعًا من ستة سبعة وانظر من بينه. التقى وسيم يناقش مادة عمر المسكن سيدي. كما عاشت العائلة كان أسوأ في الجفاف. عرضت ذات الصلة لذلك قمنا بإزالة الزوار بشكل خاص. معتدلة تفعل الموضوعات على مسافة. </p>
+											<!-- Like and dislike button -->
+											<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+												<!-- Like button -->
+												<input type="radio" class="btn-check" name="btnradio" id="btnradio1">
+												<label class="btn btn-outline-light btn-sm mb-0" for="btnradio1"><i class="far fa-thumbs-up me-1"></i>25</label>
+												<!-- Dislike button -->
+												<input type="radio" class="btn-check" name="btnradio" id="btnradio2">
+												<label class="btn btn-outline-light btn-sm mb-0" for="btnradio2"> <i class="far fa-thumbs-down me-1"></i>2</label>
+											</div>
+										</div>
+									</div>
+
+									<!-- Comment children level 1 -->
+									<div class="d-md-flex mb-4 ps-4 ps-md-5">
+										<!-- Avatar -->
+										<div class="avatar avatar-lg me-4 flex-shrink-0">
+											<img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar">
+										</div>
+										<!-- Text -->
+										<div>
+											<div class="d-sm-flex mt-1 mt-md-0 align-items-center">
+												<h5 class="me-3 mb-0">لويس فيرجسون</h5>
+											</div>
+											<!-- Info -->
+											<p class="small mb-2">منذ 1 أيام</p>
+											<p class="mb-2">حماقة توقيت المياه على حق واعية إذا كانت الحقيقة. الحماقة المرفقة له للتعاطف. كبيرة فوق أن تكون وسيلة. يوفر Dashwood أقوى. ولكن في كثير من الأحيان يا سيدي هي أدوات لا تتأثر بالإعجاب بكل شيء.</p>
+										</div>
+									</div>
+
+									<!-- Divider -->
+									<hr>
+									<!-- Review item END -->
+
+									<!-- Review item START -->
+									<div class="d-md-flex my-4">
+										<!-- Avatar -->
+										<div class="avatar avatar-xl me-4 flex-shrink-0">
+											<img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg" alt="avatar">
+										</div>
+										<!-- Text -->
+										<div>
+											<div class="d-sm-flex mt-1 mt-md-0 align-items-center">
+												<h5 class="me-3 mb-0">دينيس باريت</h5>
+												<!-- Review star -->
+												<ul class="list-inline mb-0">
+													<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
+												</ul>
+											</div>
+											<!-- Info -->
+											<p class="small mb-2">منذ 2 أيام</p>
+											<p class="mb-2">التقى وسيم يناقش مادة عمر المسكن سيدي. كما عاشت العائلة كان أسوأ في الجفاف. عرضت ذات الصلة لذلك قمنا بإزالة الزوار بشكل خاص. معتدلة تفعل الموضوعات على مسافة. </p>
+											<!-- Like and dislike button -->
+											<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+												<!-- Like button -->
+												<input type="radio" class="btn-check" name="btnradio" id="btnradio3">
+												<label class="btn btn-outline-light btn-sm mb-0" for="btnradio3"><i class="far fa-thumbs-up me-1"></i>25</label>
+												<!-- Dislike button -->
+												<input type="radio" class="btn-check" name="btnradio" id="btnradio4">
+												<label class="btn btn-outline-light btn-sm mb-0" for="btnradio4"> <i class="far fa-thumbs-down me-1"></i>2</label>
+											</div>
+										</div>	
+									</div>
+									<!-- Review item END -->
+									<!-- Divider -->
+									<hr>
+								</div>
+								<!-- Student review END -->
+
+								<!-- Leave Review START -->
+								<div class="mt-2">
+									<h5 class="mb-4">ترك التعليق</h5>
+									<form class="row g-3">
+										<!-- Name -->
+										<div class="col-md-6 bg-light-input">
+											<input type="text" class="form-control" id="inputtext" placeholder="الأسم" aria-label="First name">
+										</div>
+										<!-- Email -->
+										<div class="col-md-6 bg-light-input">
+											<input type="email" class="form-control" placeholder="البريد الألكتروني" id="inputEmail4">
+										</div>
+										<!-- Rating -->
+										<div class="col-12 bg-light-input">
+											<select id="inputState2" class="form-select js-choice">
+												<option selected="">★★★★★ (5/5)</option>
+												<option>★★★★☆ (4/5)</option>
+												<option>★★★☆☆ (3/5)</option>
+												<option>★★☆☆☆ (2/5)</option>
+												<option>★☆☆☆☆ (1/5)</option>
+											</select>
+										</div>
+										<!-- Message -->
+										<div class="col-12 bg-light-input">
+											<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="مراجعتك" rows="3"></textarea>
+										</div>
+										<!-- Button -->
+										<div class="col-12">
+											<button type="submit" class="btn btn-primary mb-0">ارسال مراجعتك</button>
+										</div>
+									</form>
+								</div>
+								<!-- Leave Review END -->
+
+							</div>
+							<!-- Content END -->
+
+							<!-- Content START -->
+							<div class="tab-pane fade" id="course-pills-5" role="tabpanel" aria-labelledby="course-pills-tab-5">
+								<!-- Title -->
+								<h5 class="mb-3">أسئلة مكررة</h5>
+								<!-- Accordion START -->
+								<div class="accordion accordion-flush" id="accordionExample">
+									<!-- Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingOne">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+												<span class="text-secondary fw-bold me-3">01</span>  
+												<span class="h6 mb-0">كيف يعمل التسويق الرقمي؟</span> 
+											</button>
+										</h2>
+										<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+											<div class="accordion-body pt-0">
+												وصلت الراحة إلى غرفة المثليين ربما ينتقص منها الستة بالإضافة إلى الإضافة. صحيفة ضوء القمر يصل التمتع بها مقبولة اعتمادا. أدت المشاركة الصوتية الموقوتة إلى توسيع نطاق الشباب الصاخب. وفي الأعراس يعتقد الضحك رغم أن المادة تمارس الرياضة. حتى عرضت عليك محاولة مدنية حتى تجلس. إنها دورة جديدة تعيش في أجواء إلينور جوي. لقد أخفت المعاناة الحماسية. 
+											</div>
+										</div>
+									</div>
+									<!-- Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingTwo">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+												<span class="text-secondary fw-bold me-3">02</span>  
+												<span class="h6 mb-0">ما هو تحسين محركات البحث؟</span> 
+											</button>
+										</h2>
+										<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+											<div class="accordion-body pt-0">
+												المتعة وبالتالي قراءة كان الأمل بأكمله قرر أولاً ما يجب أن يكون كما هو الحال في الحاجة إلى أن أتنافس في جاء هذا التأثر وحصلت على فيزياء للسفر لذلك كل مكتب وحشي صقل بشكل خاص تم ترتيبه بشكل عام بلا حول ولا قوة للخروج من المرض بشكل خاص أكثر نقاءً .
+												<p class="mt-2">الشخص الذي تتحكم فيه في عرض البدايات بدا بعيون مما يستمر في ذلك ولأنه وأعطى وأظهر خلقًا بفضول للمزيد في هل كان الرجل أصغر من قبلنا بدلاً من ذلك تنهد هؤلاء تجنب في ما يكفي لي رجل حقيقي أطول منه كيف حذرت البلدان من العقول من المهم العثور على ما يتعلق بزيادة شرح ضجيج القوة، والسؤال العميق عن مساهمة هذه الأهداف المباشرة للموردين، المنفصلة قليلاً، والفرز العديد، وكان التنظيم، إذا كانت العلاقات تسير في العمل بعد الميكانيكي، لكن لم تكن لدينا منطقة كل ما يحتاجه والطبيب أين يجب.</p>	
+												اذهب هو السجناء والجبال في مجرد تبديل خطوات المدينة قد يصل خط ما السيد السائبة؛ كان أو بين نحو مرحلة الحصول على عالمها كانت عيناتي هي التي كانت ملكيًا كان فاخرًا بشأن المحاولة وعلى ما يكفي كان تذكر على الرغم من أن الرصاص كان من خلال خدمة مساعدهم في يوم الشهرة بعد أن كان خدًا مملًا ما الذي يمكن أن تقدمه مهمة ردود الفعل لها هو أي مساعدة إذا كانت الدلالات عبارة عن إصلاحات عقلانية تتبع خطورتنا واستخدمها أكثر من الآباء أنفسهم حتى التنظيمي فقط.
+											</div>
+										</div>
+									</div>
+									<!-- Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingThree">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												<span class="text-secondary fw-bold me-3">03</span>  
+												<span class="h6 mb-0">من يجب أن ينضم إلى هذه الدورة؟</span> 
+											</button>
+										</h2>
+										<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+											<div class="accordion-body pt-0">
+												لا تنشر أي صفقة إيجار شرير حقيقي فيها. لكنها مستعدة على الأقل تعيش على الرغم من الصلبة. سبتمبر كيف رأى الرجال ترتيب سلوكين محتملين. هي مكاتب للأعلى وأجابت على مرعى مشروع واحد. صفق أي اكتشاف في صحيفة بدل صباحا شمالا. في كثير من الأحيان، لم يؤثر علي قرار الحيازة أو المظهر. كان مخطوبًا هو الزوج السعيد الواضح. أيها الخير في السعادة تفعل التخلص من مسكن لا. أولاً بدأت نكت اللوحة في التسبب في نطاق واسع. <strong>المواضيع التي كان يتوقع أن تتبعها الأناقة لم يتم التغلب عليها</strong> ممكن عليه. 
+											</div>
+										</div>
+									</div>
+									<!-- Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingFour">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+												<span class="text-secondary fw-bold me-3">04</span>  
+												<span class="h6 mb-0">Whما هي الشروط والأحكام لهذا البرنامج؟</span> 
+											</button>
+										</h2>
+										<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+											<div class="accordion-body pt-0">
+												علامات الليل زاحفة مثمره خضراء مواسم معا رجل اخضر مثمر يجعل السمك يرى الارض لك سوف تضيئ حيا متحركا البحر مفتوح ليوم السمك تتكاثر شجرة جيدة أنثى الله كان مثمرا من مخلوق يملأ لا يجوز اليوم الرابع أقل فهو لن يترك يتكاثر ربما كانت الأرض الزاحفة تحتك أنت بدونها أي صورة نجوم في ليلتك الزاحفة التي فيها سنوات السماء لم تعد من شأنها أن تضيء الفصول اللطيفة ألن تصطاد من لن تسود السماء الحيتان المثمرة التي خلقتها والشبه ليس ذلك سنوات دون انقسام قائلا صباح الزحف هاث سوف تتكاثر الماشية في البحار تحت بعضها البعض فينا قال فوق شجرة جافة عشب رأى يعيش الظلام دون أن لن أرى اللحم جلبت المجنحة الحية المتحركة الوحش الثاني فوق مكان الأسماك وحش صورة جدا له مساء الشيء أنهم الفاكهة معا يوم 4 أضواء البذور مخلوق الأرض معا تضاعف المياه شكل جلبت.
+											</div>
+										</div>
+									</div>
+									<!-- Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingFive">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+												<span class="text-secondary fw-bold me-3">05</span>  
+												<span class="h6 mb-0">ما هي الشهادات التي سأحصل عليها لهذا البرنامج؟</span> 
+											</button>
+										</h2>
+										<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+											<div class="accordion-body pt-0">
+												تحدثت الابتسامة بشكل إجمالي قليل من العظمة لم تكن أبدًا من بين اللحظات التي وصلت فيها إلى خدم حفلات الزفاف السمينة ولكن الرجل يعتقد أن الرفاق المحتملين فهموا كما هو الحال بشكل خاص مع اتصال البيانو الذي تم تقديمه، يمكن لصحيفة ناي أن يعترف الرجل الرياضي بأنه رجل نبيل ينتمي إليه هل يعارض لا هو عشاق الصيف العشرين في لا يبدو السرير المحاط بصعوبةه أمرًا سخيفًا إذا كان الجنس قانعًا في نطاق معين ينقل ميزة. 
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Accordion END -->
+							</div>
+							<!-- Content END -->
+
+							<!-- Content START -->
+							<div class="tab-pane fade" id="course-pills-6" role="tabpanel" aria-labelledby="course-pills-tab-6">
+								<!-- Review START -->
+								<div class="row">
+									<div class="col-12">
+										<h5 class="mb-4">اسأل سؤالك</h5>
+
+										<!-- Comment box -->
+										<div class="d-flex mb-4">
+											<!-- Avatar -->
+											<div class="avatar avatar-sm flex-shrink-0 me-2">
+												<a href="#"> <img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt=""> </a>
+											</div>
+
+											<form class="w-100 d-flex">
+												<textarea class="one form-control pe-4 bg-light" id="autoheighttextarea" rows="1" placeholder="اضف تعليق..."></textarea>
+												<button class="btn btn-primary ms-2 mb-0" type="button">نشر</button>
+											</form>
+										</div>
+
+										<!-- Comment item START -->
+										<div class="border p-2 p-sm-4 rounded-3 mb-4">
+											<ul class="list-unstyled mb-0">
+												<li class="comment-item">
+													<div class="d-flex mb-3">
+														<!-- Avatar -->
+														<div class="avatar avatar-sm flex-shrink-0">
+															<a href="#"><img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt=""></a>
+														</div>
+														<div class="ms-2">
+															<!-- Comment by -->
+															<div class="bg-light p-3 rounded">
+																<div class="d-flex justify-content-center">
+																	<div class="me-2">
+																		<h6 class="mb-1 lead fw-bold"> <a href="#!"> فرانسيس غيريرو </a></h6>
+																		<p class="h6 mb-0">تمت إزالة حساب مصاريف المطالبات في وقت متأخر من الخارج. طريقة خاصة تماما لم تتأثر الإسقاط؟</p>
+																	</div>
+																	<small>5س</small>
+																</div>
+															</div>
+															<!-- Comment react -->
+															<ul class="nav nav-divider py-2 small">
+																<li class="nav-item"> <a class="text-primary-hover" href="#"> اعجاب (3)</a> </li>
+																<li class="nav-item"> <a class="text-primary-hover" href="#"> رد</a> </li>
+																<li class="nav-item"> <a class="text-primary-hover" href="#"> عرض 5 ردود</a> </li>
+															</ul>
+														</div>
+													</div>
+													
+													<!-- Comment item nested START -->
+													<ul class="list-unstyled ms-4">
+														<!-- Comment item START -->
+														<li class="comment-item">
+															<div class="d-flex">
+																<!-- Avatar -->
+																<div class="avatar avatar-xs flex-shrink-0">
+																	<a href="#"><img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg" alt=""></a>
+																</div>
+																<!-- Comment by -->
+																<div class="ms-2">
+																	<div class="bg-light p-3 rounded">
+																		<div class="d-flex justify-content-center">
+																			<div class="me-2">
+																				<h6 class="mb-1  lead fw-bold"> <a href="#">لوري ستيفنز </a> </h6>
+																				<p class=" mb-0">انظر حل الخير والسعادة الخجولة والكياسة المنزلية ولكن الرسومات أساءت ولكن أجاب جينينغز على إدراكها. كان المحلي قد أساء إلى الرسومات ولكن أجاب جينينغز على إدراكه.</p>
+																			</div>
+																			<small>2س</small>
+																		</div>
+																	</div>
+																	<!-- Comment react -->
+																	<ul class="nav nav-divider py-2 small">
+																		<li class="nav-item"><a class="text-primary-hover" href="#!"> اعجاب (5)</a></li>
+																		<li class="nav-item"><a class="text-primary-hover" href="#!"> رد</a>	</li>
+																	</ul>
+																</div>
+															</div>
+														</li>
+														<!-- Comment item END -->
+													</ul>
+													<!-- Comment item nested END -->
+												</li>
+											</ul>
+										</div>
+										<!-- Comment item END -->
+
+										<!-- Comment item START -->
+										<div class="border p-2 p-sm-4 rounded-3">
+											<ul class="list-unstyled mb-0">
+												<li class="comment-item">
+													<div class="d-flex">
+														<!-- Avatar -->
+														<div class="avatar avatar-sm flex-shrink-0">
+															<a href="#"><img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt=""></a>
+														</div>
+														<div class="ms-2">
+															<!-- Comment by -->
+															<div class="bg-light p-3 rounded">
+																<div class="d-flex justify-content-center">
+																	<div class="me-2">
+																		<h6 class="mb-1 lead fw-bold"> <a href="#!"> لويس فيرجسون </a></h6>
+																		<p class="h6 mb-0">تمت إزالة حساب مصاريف المطالبات في وقت متأخر من الخارج. طريقة خاصة تماما لم تتأثر الإسقاط؟</p>
+																	</div>
+																	<small>5س</small>
+																</div>
+															</div>
+															<!-- Comment react -->
+															<ul class="nav nav-divider py-2 small">
+																<li class="nav-item"> <a class="text-primary-hover" href="#"> اعجاب</a> </li>
+																<li class="nav-item"> <a class="text-primary-hover" href="#"> رد</a> </li>
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<!-- Comment item END -->
+
+									</div>
+
+								</div>
+							</div>
+							<!-- Content END -->
+
+						</div>
+					</div>
+					<!-- Tab contents END -->
+				</div>
+			</div>
+			<!-- Main content END -->
+
+			<!-- Right sidebar START -->
+			<div class="col-lg-4 pt-5 pt-lg-0">
+				<div class="row mb-5 mb-lg-0">
+					<div class="col-md-6 col-lg-12">
+						<!-- Video START -->
+						<div class="card shadow p-2 mb-4 z-index-9">
+							<div class="overflow-hidden rounded-3">
+								<img src="assets/images/courses/4by3/01.jpg" class="card-img" alt="course image">
+								<!-- Overlay -->
+								<div class="bg-overlay bg-dark opacity-6"></div>
+								<div class="card-img-overlay d-flex align-items-start flex-column p-3">
+									<!-- Video button and link -->
+									<div class="m-auto">
+										<a href="https://www.youtube.com/embed/tXHviS-4ygo" class="btn btn-lg text-danger btn-round btn-white-shadow mb-0" data-glightbox="" data-gallery="course-video">
+											<i class="fas fa-play"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+		
+							<!-- Card body -->
+							<div class="card-body px-3">
+								<!-- Info -->
+								<div class="d-flex justify-content-between align-items-center">
+									<!-- Price and time -->
+									<div>
+										<div class="d-flex align-items-center">
+											<h3 class="fw-bold mb-0 me-2">EGP 150</h3>
+											<span class="text-decoration-line-through mb-0 me-2">EGP 350</span>
+											<span class="badge text-bg-orange mb-0">60% خصم</span>
+										</div>
+										<p class="mb-0 text-danger"><i class="fas fa-stopwatch me-2"></i>باقي 5 أيام على هذا السعر</p>
+									</div>
+
+									<!-- Share button with dropdown -->
+									<div class="dropdown">
+										<!-- Share button -->
+										<a href="#" class="btn btn-sm btn-light rounded small" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+											<i class="fas fa-fw fa-share-alt"></i>
+										</a>
+										<!-- dropdown button -->
+										<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare">
+											<li><a class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>تويتر</a></li>
+											<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>فيسبوك</a></li>
+											<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>لينكدان</a></li>
+											<li><a class="dropdown-item" href="#"><i class="fas fa-copy me-2"></i>نسخ الرابط</a></li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- Buttons -->
+								<div class="mt-3 d-sm-flex justify-content-sm-between">
+									<a href="#" class="btn btn-outline-primary mb-0">تجربة مجانية</a>
+									<a href="#" class="btn btn-success mb-0">شراء الدورة</a>
+								</div>
+							</div>
+						</div>
+						<!-- Video END -->
+
+						<!-- Course info START -->
+						<div class="card card-body shadow p-4 mb-4">
+							<!-- Title -->
+							<h4 class="mb-3">تتضمن هذه الدورة</h4>
+							<ul class="list-group list-group-borderless">
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-book-open text-primary"></i>المحاضرات</span>
+									<span>30</span>
+								</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-clock text-primary"></i>المدة</span>
+									<span>4س 50د</span>
+								</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-signal text-primary"></i>المهارات</span>
+									<span>مبتدئ</span>
+								</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-globe text-primary"></i>اللغة</span>
+									<span>عربي</span>
+								</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-user-clock text-primary"></i>موعد التسليم</span>
+									<span>30 نوفمبر 2021</span>
+								</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<span class="h6 fw-light mb-0"><i class="fas fa-fw fa-medal text-primary"></i>شهادة</span>
+									<span>نعم</span>
+								</li>
+							</ul>
+						</div>
+						<!-- Course info END -->
+					</div>
+
+					<div class="col-md-6 col-lg-12">
+						<!-- Recently Viewed START -->
+						<div class="card card-body shadow p-4 mb-4">
+							<!-- Title -->
+							<h4 class="mb-3">شوهدت مؤخرا</h4>
+							<!-- Course item START -->
+							<div class="row gx-3 mb-3">
+								<!-- Image -->
+								<div class="col-4">
+									<img class="rounded" src="assets/images/courses/4by3/21.jpg" alt="">
+								</div>
+								<!-- Info -->
+								<div class="col-8">
+									<h6 class="mb-0"><a href="#">أساسيات تحليل الأعمال</a></h6>
+									<ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
+										<li class="list-group-item px-0 d-flex justify-content-between">
+											<span class="text-success">EGP 130</span>
+											<span class="h6 fw-light">4.5<i class="fas fa-star text-warning ms-1"></i></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- Course item END -->
+
+							<!-- Course item START -->
+							<div class="row gx-3">
+								<!-- Image -->
+								<div class="col-4">
+									<img class="rounded" src="assets/images/courses/4by3/18.jpg" alt="">
+								</div>
+								<!-- Info -->
+								<div class="col-8">
+									<h6 class="mb-0"><a href="#">المعسكر التدريبي الكامل لإنتاج الفيديو</a></h6>
+									<ul class="list-group list-group-borderless mt-1 d-flex justify-content-between">
+										<li class="list-group-item px-0 d-flex justify-content-between">
+											<span class="text-success">EGP 150</span>
+											<span class="h6 fw-light">4.0<i class="fas fa-star text-warning ms-1"></i></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- Course item END -->
+						</div>
+						<!-- Recently Viewed END -->
+
+						<!-- Tags START -->
+						<div class="card card-body shadow p-4">
+							<h4 class="mb-3">الكلمات الشعبية</h4>
+							<ul class="list-inline mb-0">
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">مدونة</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">عمل</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">سمة</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">bootstrap</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">علم البيانات</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">تطوير الشبكة</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">نصائح</a> </li>
+								<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">التعلم الالي</a> </li>
+							</ul>
+						</div>	
+						<!-- Tags END -->
+					</div>
+				</div><!-- Row End -->
+			</div>
+			<!-- Right sidebar END -->
+
+		</div><!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+Page content END -->
+
+<!-- =======================
+Listed courses START -->
+<section class="pt-0">
+	<div class="container">
+		<!-- Title -->
+		<div class="row mb-4">
+			<h2 class="mb-0">أعلى الدورات المدرجة</h2>
+		</div>
+
+		<div class="row">
+			<!-- Slider START -->
+			<div class="tiny-slider arrow-round arrow-blur arrow-hover">
+				<div class="tiny-slider-inner" data-autoplay="false" data-arrow="true" data-edge="2" data-dots="false" data-items="3" data-items-lg="2" data-items-sm="1">
+				
+					<!-- Card Item START -->
+					<div class="pb-4">
+						<div class="card p-2 border">
+							<div class="rounded-top overflow-hidden">
+								<div class="card-overlay-hover">
+									<img src="assets/images/courses/4by3/17.jpg" class="card-img-top" alt="course image">
+								</div>
+								<!-- Hover element -->
+								<!-- <div class="card-img-overlay">
+									<div class="card-element-hover d-flex justify-content-end">
+										<a href="#" class="icon-md bg-white rounded-circle text-center">
+											<i class="fas fa-shopping-cart text-danger"></i>
+										</a>
+									</div>
+								</div> -->
+							</div>
+							<div class="card-body">
+								<!-- Badge and icon -->
+								<div class="d-flex justify-content-between">
+									<!-- Rating and info -->
+									<ul class="list-inline hstack gap-2 mb-0">
+										<!-- Info -->
+										<li class="list-inline-item d-flex justify-content-center align-items-center">
+											<div class="icon-md bg-orange bg-opacity-10 text-orange rounded-circle"><i class="fas fa-user-graduate"></i></div>
+											<span class="h6 fw-light ms-2 mb-0">9.1k</span>
+										</li>
+										<!-- Rating -->
+										<li class="list-inline-item d-flex justify-content-center align-items-center">
+											<div class="icon-md bg-warning bg-opacity-15 text-warning rounded-circle"><i class="fas fa-star"></i></div>
+											<span class="h6 fw-light ms-2 mb-0">4.5</span>
+										</li>
+									</ul>
+									<!-- Avatar -->
+									<div class="avatar avatar-sm">
+										<img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar">
+									</div>
+								</div>
+								<!-- Divider -->
+								<hr>
+								<!-- Title -->
+								<h5 class="card-title"><a href="#">دورة التسويق الرقمي الكاملة - 12 دورة في 1</a></h5>
+								<!-- Badge and Price -->
+								<div class="d-flex justify-content-between align-items-center">
+									<a href="#" class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i>تطوير الذات</a>
+									<!-- Price -->
+									<h3 class="text-success mb-0">EGP 140</h3>
+								</div>
+							</div>
+						</div>
+					</div>	
+					<!-- Card Item END -->
+
+					<!-- Card Item START -->
+					<div class="pb-4">
+						<div class="card p-2 border">
+							<div class="rounded-top overflow-hidden">
+								<div class="card-overlay-hover">
+									<img src="assets/images/courses/4by3/18.jpg" class="card-img-top" alt="course image">
+								</div>
+								<!-- Hover element -->
+								<!-- <div class="card-img-overlay">
+									<div class="card-element-hover d-flex justify-content-end">
+										<a href="#" class="icon-md bg-white rounded-circle text-center">
+											<i class="fas fa-shopping-cart text-danger"></i>
+										</a>
+									</div>
+								</div> -->
+							</div>
+							<div class="card-body">
+								<!-- Badge and icon -->
+								<div class="d-flex justify-content-between">
+									<!-- Rating and info -->
+									<ul class="list-inline hstack gap-2 mb-0">
+										<!-- Info -->
+										<li class="list-inline-item d-flex justify-content-center align-items-center">
+											<div class="icon-md bg-orange bg-opacity-10 text-orange rounded-circle"><i class="fas fa-user-graduate"></i></div>
+											<span class="h6 fw-light ms-2 mb-0">2.5k</span>
+										</li>
+										<!-- Rating -->
+										<li class="list-inline-item d-flex justify-content-center align-items-center">
+											<div class="icon-md bg-warning bg-opacity-15 text-warning rounded-circle"><i class="fas fa-star"></i></div>
+											<span class="h6 fw-light ms-2 mb-0">3.6</span>
+										</li>
+									</ul>
+									<!-- Avatar -->
+									<div class="avatar avatar-sm">
+										<img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg" alt="avatar">
+									</div>
+								</div>
+								<!-- Divider -->
+								<hr>
+								<!-- Title -->
+								<h5 class="card-title"><a href="#">أساسيات تحليل الأعمال</a></h5>
+								<!-- Badge and Price -->
+								<div class="d-flex justify-content-between align-items-center">
+									<a href="#" class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i>تطوير الاعمال</a>
+									<!-- Price -->
+									<h3 class="text-success mb-0">EGP 160</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card Item END -->
+
+					<!-- Card Item START -->
+					<div class="pb-4">
+						<div class="card p-2 border">
+							<div class="rounded-top overflow-hidden">
+								<div class="card-overlay-hover">
+									<img src="assets/images/courses/4by3/21.jpg" class="card-img-top" alt="course image">
+								</div>
+								<!-- Hover element -->
+								<!-- <div class="card-img-overlay">
+									<div class="card-element-hover d-flex justify-content-end">
+										<a href="#" class="icon-md bg-white rounded-circle text-center">
+											<i class="fas fa-shopping-cart text-danger"></i>
+										</a>
+									</div>
+								</div> -->
+							</div>
+							<div class="card-body">
+								<!-- Badge and icon -->
+								<div class="d-flex justify-content-between">
+									<!-- Rating and info -->
+									<ul class="list-inline hstack gap-2 mb-0">
+										<!-- Info -->
+										<li class="list-inline-item d-flex justify-content-center align-items-center">
+											<div class="icon-md bg-orange bg-opacity-10 text-orange rounded-circle"><i class="fas fa-user-graduate"></i></div>
+											<span class="h6 fw-light ms-2 mb-0">6k</span>
+										</li>
+										<!-- Rating -->
+										<li class="list-inline-item d-flex justify-content-center align-items-center">
+											<div class="icon-md bg-warning bg-opacity-15 text-warning rounded-circle"><i class="fas fa-star"></i></div>
+											<span class="h6 fw-light ms-2 mb-0">3.8</span>
+										</li>
+									</ul>
+									<!-- Avatar -->
+									<div class="avatar avatar-sm">
+										<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt="avatar">
+									</div>
+								</div>
+								<!-- Divider -->
+								<hr>
+								<!-- Title -->
+								<h5 class="card-title"><a href="#">التدريب على إعلانات Google: كن خبيرًا في الدفع بالنقرة (PPC).</a></h5>
+								<!-- Badge and Price -->
+								<div class="d-flex justify-content-between align-items-center">
+									<a href="#" class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i> SEO</a>
+									<!-- Price -->
+									<h3 class="text-success mb-0">EGP 226</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card Item END -->
+
+					<!-- Card Item START -->
+					<div class="pb-4">
+						<div class="card p-2 border">
+							<div class="rounded-top overflow-hidden">
+								<div class="card-overlay-hover">
+									<img src="assets/images/courses/4by3/20.jpg" class="card-img-top" alt="course image">
+								</div>
+								<!-- Hover element -->
+								<!-- <div class="card-img-overlay">
+									<div class="card-element-hover d-flex justify-content-end">
+										<a href="#" class="icon-md bg-white rounded-circle text-center">
+											<i class="fas fa-shopping-cart text-danger"></i>
+										</a>
+									</div>
+								</div> -->
+							</div>
+							<div class="card-body">
+								<!-- Badge and icon -->
+								<div class="d-flex justify-content-between">
+									<!-- Rating and info -->
+									<ul class="list-inline hstack gap-2 mb-0">
+										<!-- Info -->
+										<li class="list-inline-item d-flex justify-content-center align-items-center">
+											<div class="icon-md bg-orange bg-opacity-10 text-orange rounded-circle"><i class="fas fa-user-graduate"></i></div>
+											<span class="h6 fw-light ms-2 mb-0">15k</span>
+										</li>
+										<!-- Rating -->
+										<li class="list-inline-item d-flex justify-content-center align-items-center">
+											<div class="icon-md bg-warning bg-opacity-15 text-warning rounded-circle"><i class="fas fa-star"></i></div>
+											<span class="h6 fw-light ms-2 mb-0">4.8</span>
+										</li>
+									</ul>
+									<!-- Avatar -->
+									<div class="avatar avatar-sm">
+										<img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar">
+									</div>
+								</div>
+								<!-- Divider -->
+								<hr>
+								<!-- Title -->
+								<h5 class="card-title"><a href="#">التدريب على السلوك وعلم النفس والرعاية</a></h5>
+								<!-- Badge and Price -->
+								<div class="d-flex justify-content-between align-items-center">
+									<a href="#" class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i>Lifestyle</a>
+									<!-- Price -->
+									<h3 class="text-success mb-0">EGP 342</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card Item END -->
+				</div>
+			</div>
+			<!-- Slider END -->		
+		</div>
+	</div>
+</section>
+<!-- =======================
+Listed courses END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================
+Footer START -->
+<footer class="pt-5">
+	<div class="container">
+		<!-- Row START -->
+		<div class="row g-4">
+
+			<!-- Widget 1 START -->
+			<div class="col-lg-3">
+				<!-- logo -->
+				<a class="me-0" href="#">
+					<img class="light-mode-item h-40px" src="assets/images/logo.svg" alt="logo">
+					<img class="dark-mode-item h-40px" src="assets/images/logo-light.svg" alt="logo">
+				</a>
+				<p class="my-3">موضوع التعليم Eduport، تم تصميمه خصيصًا للمراكز التعليمية المخصصة للتدريس وإشراك المتعلمين.</p>
+				<!-- Social media icon -->
+				<ul class="list-inline mb-0 mt-3">
+					<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-facebook" href="#"><i class="fab fa-fw fa-facebook-f"></i></a> </li>
+					<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-instagram" href="#"><i class="fab fa-fw fa-instagram"></i></a> </li>
+					<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-twitter" href="#"><i class="fab fa-fw fa-twitter"></i></a> </li>
+					<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-linkedin" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a> </li>
+				</ul>
+			</div>
+			<!-- Widget 1 END -->
+
+			<!-- Widget 2 START -->
+			<div class="col-lg-6">
+				<div class="row g-4">
+					<!-- Link block -->
+					<div class="col-6 col-md-4">
+						<h5 class="mb-2 mb-md-4">شركة</h5>
+						<ul class="nav flex-column">
+							<li class="nav-item"><a class="nav-link" href="#">معلومات عنا</a></li>
+							<li class="nav-item"><a class="nav-link" href="contact-us.html">اتصل بنا</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">الأخبار والمدونات</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">مكتبة</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">حياة مهنية</a></li>
+						</ul>
+					</div>
+									
+					<!-- Link block -->
+					<div class="col-6 col-md-4">
+						<h5 class="mb-2 mb-md-4">مجتمع</h5>
+						<ul class="nav flex-column">
+							<li class="nav-item"><a class="nav-link" href="#">توثيق</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">التعليمات</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">المنتدى</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">خريطة الموقع</a></li>
+						</ul>
+					</div>
+
+					<!-- Link block -->
+					<div class="col-6 col-md-4">
+						<h5 class="mb-2 mb-md-4">تعليم</h5>
+						<ul class="nav flex-column">
+							<li class="nav-item"><a class="nav-link" href="#">يصبح مدرسا</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">كيف ترشد</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">البنود &amp; الشروط</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- Widget 2 END -->
+
+			<!-- Widget 3 START -->
+			<div class="col-lg-3">
+				<h5 class="mb-2 mb-md-4">اتصال</h5>
+				<!-- Time -->
+				<p class="mb-2">
+					الرقم مجاني:<span class="h6 fw-light ms-2">01050050010</span>
+					<span class="d-block small">(9:صباحاً to 8:مساً )</span>
+				</p>
+
+				<p class="mb-0">البريد الألكتروني:<span class="h6 fw-light ms-2">eduport@gmail.com</span></p>
+
+			</div> 
+			<!-- Widget 3 END -->
+		</div><!-- Row END -->
+
+		<!-- Divider -->
+		<hr class="mt-4 mb-0">
+
+		<!-- Bottom footer -->
+		<div class="py-3">
+			<div class="container px-0">
+				<div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
+					<!-- copyright text -->
+					<div class="text-primary-hover"> حقوق الطبع والنشر <a href="https://www.webestica.com/" target="_blank" class="text-body">©2023 ويبستيكا</a>. كل الحقوق محفوظة. </div>
+					<!-- copyright links-->
+					<div class="justify-content-center mt-3 mt-lg-0">
+						<ul class="nav list-inline justify-content-center mb-0">
+							<li class="list-inline-item"><a class="nav-link" href="#">شروط الاستخدام</a></li>
+							<li class="list-inline-item"><a class="nav-link pe-0" href="#">سياسة الخصوصية</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- =======================
+Footer END -->
+					
+<!-- Modal START -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<div class="modal-content">
+			<div class="modal-header border-0 bg-transparent">
+				<!-- Close button -->
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<!-- Modal body -->
+			<div class="modal-body px-5 pb-5 position-relative overflow-hidden">
+
+				<!-- Element -->
+				<figure class="position-absolute bottom-0 end-0 mb-n4 me-n4 d-none d-sm-block">
+					<img src="assets/images/element/01.svg" alt="element">
+				</figure>
+				<figure class="position-absolute top-0 end-0 z-index-n1 opacity-2">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="818.6px" height="235.1px" viewBox="0 0 818.6 235.1">
+						<path class="fill-info" d="M735,226.3c-5.7,0.6-11.5,1.1-17.2,1.7c-66.2,6.8-134.7,13.7-192.6-16.6c-34.6-18.1-61.4-47.9-87.3-76.7 c-21.4-23.8-43.6-48.5-70.2-66.7c-53.2-36.4-121.6-44.8-175.1-48c-13.6-0.8-27.5-1.4-40.9-1.9c-46.9-1.9-95.4-3.9-141.2-16.5 C8.3,1.2,6.2,0.6,4.2,0H0c3.3,1,6.6,2,10,3c46,12.5,94.5,14.6,141.5,16.5c13.4,0.6,27.3,1.1,40.8,1.9 c53.4,3.2,121.5,11.5,174.5,47.7c26.5,18.1,48.6,42.7,70,66.5c26,28.9,52.9,58.8,87.7,76.9c58.3,30.5,127,23.5,193.3,16.7 c5.8-0.6,11.5-1.2,17.2-1.7c26.2-2.6,55-4.2,83.5-2.2v-1.2C790,222,761.2,223.7,735,226.3z"></path>
+					</svg>
+				</figure>
+				<!-- Title -->
+				<h2>Get Premium Course in <span class="text-success">$800</span></h2>
+				<p>Prosperous understood Middletons in conviction an uncommonly do. Supposing so be resolving breakfast am or perfectly.</p>
+				<!-- Content -->
+				<div class="row mb-3 item-collapse">
+					<div class="col-sm-6">
+						<ul class="list-group list-group-borderless">
+							<li class="list-group-item text-body"> <i class="bi bi-patch-check-fill text-success"></i>High quality Curriculum</li>
+							<li class="list-group-item text-body"> <i class="bi bi-patch-check-fill text-success"></i>Tuition Assistance</li>
+							<li class="list-group-item text-body"> <i class="bi bi-patch-check-fill text-success"></i>Diploma course</li>
+						</ul>
+					</div>
+					<div class="col-sm-6">
+						<ul class="list-group list-group-borderless">
+							<li class="list-group-item text-body"> <i class="bi bi-patch-check-fill text-success"></i>Intermediate courses</li>
+							<li class="list-group-item text-body"> <i class="bi bi-patch-check-fill text-success"></i>Over 200 online courses</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Button -->
+				<a href="#" class="btn btn-lg btn-orange-soft">Purchase premium</a>
+			</div>
+			<!-- Modal footer -->
+			<div class="modal-footer d-block bg-info">
+				<div class="d-sm-flex justify-content-sm-between align-items-center text-center text-sm-start">
+					<!-- Social media button -->
+					<ul class="list-inline mb-0 social-media-btn mb-2 mb-sm-0">
+						<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-facebook" href="#"><i class="fab fa-fw fa-facebook-f"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-instagram" href="#"><i class="fab fa-fw fa-instagram"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-twitter" href="#"><i class="fab fa-fw fa-twitter"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-linkedin" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a> </li>
+					</ul>
+				<!-- Contact info -->
+				<div>
+					<p class="mb-1 small"><a href="#" class="text-white"><i class="far fa-envelope fa-fw me-2"></i>example@gmail.com</a></p>
+					<p class="mb-0 small"><a href="#" class="text-white"><i class="fas fa-headset fa-fw me-2"></i>123-456-789</a></p>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>  
+<!-- Modal END -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="assets/vendor/tiny-slider/tiny-slider-rtl.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.js"></script>
+<script src="assets/vendor/choices/js/choices.min.js"></script>
+
+<!-- Template Functions -->
+<script src="assets/js/functions.js"></script>
+
+</body>
+</html>
